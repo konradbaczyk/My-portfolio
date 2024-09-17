@@ -1,0 +1,25 @@
+@use "../utils/resetCSS" as *;
+@use "../utils/variables" as *;
+@use "../utils/components" as *;
+@use "./heading";
+@use "./navigation";
+
+.header {
+	height: 20%;
+	// border: 1px solid $grey;
+	// overflow: hidden;
+}
+
+// MEDIA QUERIES
+@media (min-width: 576px) {
+	.header {
+		display: flex;
+		align-items: center;
+	}
+}
+
+@media (min-width: 768px) {
+	.header {
+		height: 15%;
+	}
+}

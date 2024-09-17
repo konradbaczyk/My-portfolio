@@ -1,0 +1,182 @@
+@use "../utils/resetCSS" as *;
+@use "../utils/variables" as *;
+@use "../utils/components" as *;
+@use "../utils/animations" as *;
+
+.navigation {
+	height: 35%;
+	padding: 1rem;
+
+	&__menu {
+		height: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	&__item {
+		opacity: 0;
+		rotate: -15deg;
+		transform-origin: left;
+
+		&:nth-child(1) {
+			animation: 0.5s 2.2s showItem forwards;
+		}
+		&:nth-child(2) {
+			animation: 0.5s 2.4s showItem forwards;
+		}
+		&:nth-child(3) {
+			animation: 0.5s 2.6s showItem forwards;
+		}
+	}
+
+	&__button {
+		font-size: 1.8rem;
+		color: $white;
+		transition: color 0.3s;
+
+		&--active {
+			color: $violet;
+		}
+	}
+}
+
+// MEDIA QUERIES
+@media (min-width: 576px) {
+	.navigation {
+		width: 50%;
+		height: 100%;
+		padding: 0;
+
+		&__menu {
+			padding: 1rem 0;
+			flex-direction: column;
+		}
+
+		&__button {
+			font-size: 2.4rem;
+
+			&:hover,
+			&:focus {
+				color: $violet;
+			}
+
+			&:focus-visible {
+				outline: 1px solid $violet;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.navigation {
+		&__menu {
+			padding: 0;
+			flex-direction: row;
+		}
+
+		&__button {
+			position: relative;
+			padding: 1rem;
+
+			&::after,
+			&::before {
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 0;
+				scale: 0;
+				transition: width 0.3s, height 0.3s, scale 0.3s;
+			}
+
+			&::after {
+				left: 0;
+				bottom: 15%;
+				border-bottom: 2px solid $white;
+				border-left: 2px solid $white;
+				transform-origin: left;
+			}
+
+			&::before {
+				top: 15%;
+				right: 0;
+				border-top: 2px solid $white;
+				border-right: 2px solid $white;
+				transform-origin: right;
+			}
+
+			&:hover::before,
+			&:hover::after {
+				width: 40%;
+				height: 20%;
+				scale: 1;
+			}
+
+			&--active {
+				color: $violet;
+
+				&::after,
+				&::before {
+					content: "";
+					position: absolute;
+					width: 40%;
+					height: 20%;
+					scale: 1;
+				}
+
+				&::after {
+					left: 0;
+					bottom: 15%;
+					border-bottom: 2px solid $white;
+					border-left: 2px solid $white;
+				}
+
+				&::before {
+					top: 15%;
+					right: 0;
+					border-top: 2px solid $white;
+					border-right: 2px solid $white;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.navigation {
+		padding: 2rem 1rem;
+
+		&__button {
+			font-size: 2.8rem;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.navigation {
+		padding: 2rem;
+
+		&__item {
+			&:nth-child(1) {
+				animation: 0.5s 7.05s showItem forwards;
+			}
+			&:nth-child(2) {
+				animation: 0.5s 7.2s showItem forwards;
+			}
+			&:nth-child(3) {
+				animation: 0.5s 7.35s showItem forwards;
+			}
+		}
+
+		&__button {
+			font-size: 3.2rem;
+		}
+	}
+}
+
+@media (min-width: 1600px) {
+	.navigation {
+		width: 30%;
+	}
+}

@@ -1,0 +1,77 @@
+@use "../utils/resetCSS" as *;
+@use "../utils/animations" as *;
+
+.background,
+.bg-element {
+	position: absolute;
+}
+
+.background {
+	top: 0;
+	left: 0;
+	width: 100svw;
+	height: 100svh;
+	z-index: -9999;
+}
+
+.bg-element {
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&__top-left {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		max-width: 1054px;
+		max-height: 1066px;
+		background-image: url("../img/ellipse_top_left.svg");
+	}
+
+	&__small,
+	&__medium,
+	&__big {
+		display: none;
+	}
+}
+
+@media (min-width: 992px) {
+	.bg-element {
+		&__top-left {
+			opacity: 0;
+			animation: 0.1s 1s showItem forwards, 2.5s 2.5s pulse alternate infinite;
+		}
+
+		&__small,
+		&__medium,
+		&__big {
+			display: block;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+		}
+
+		&__small {
+			max-width: 500px;
+			max-height: 431px;
+			background-image: url("../img/ellipse_small.svg");
+			animation: 0.1s 1.5s showItem forwards;
+		}
+
+		&__medium {
+			max-width: 889px;
+			max-height: 818px;
+			background-image: url("../img/ellipse_medium.svg");
+			animation: 0.1s 2s showItem forwards;
+		}
+
+		&__big {
+			max-width: 1146px;
+			max-height: 954px;
+			background-image: url("../img/ellipse_big.svg");
+			animation: 0.1s 2.5s showItem forwards;
+		}
+	}
+}

@@ -1,0 +1,91 @@
+@use "../utils/resetCSS" as *;
+@use "../utils/variables" as *;
+@use "../utils/components" as *;
+
+.home-page {
+	&__main-title,
+	&__subtitle {
+		opacity: 0;
+		-webkit-animation: text-flicker-in-glow 1s 1s linear both;
+		animation: text-flicker-in-glow 1s 1s linear both;
+	}
+
+	&__main-title {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__skills {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__skill {
+		width: fit-content;
+		margin: 0.5rem;
+		padding: 0.5rem 1rem;
+		text-align: center;
+		font-size: 1.6rem;
+		border: 2px solid $white;
+		border-radius: 24px;
+		opacity: 0;
+		rotate: -15deg;
+		transform-origin: left;
+
+		&:nth-child(1) {
+			animation: 0.5s 2.8s showItem forwards;
+		}
+		&:nth-child(2) {
+			animation: 0.5s 2.95s showItem forwards;
+		}
+		&:nth-child(3) {
+			animation: 0.5s 3.1s showItem forwards;
+		}
+		&:nth-child(4) {
+			animation: 0.5s 3.35s showItem forwards;
+		}
+		&:nth-child(5) {
+			animation: 0.5s 3.5s showItem forwards;
+		}
+		&:nth-child(6) {
+			animation: 0.5s 3.65s showItem forwards;
+		}
+		&:nth-child(7) {
+			animation: 0.5s 3.8s showItem forwards;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.home-page {
+		&__main-title,
+		&__subtitle {
+			-webkit-animation: text-flicker-in-glow 3s 3s linear both;
+			animation: text-flicker-in-glow 3s 3s linear both;
+		}
+
+		&__skill {
+			&:nth-child(1) {
+				animation: 0.5s 5.8s showItem forwards;
+			}
+			&:nth-child(2) {
+				animation: 0.5s 5.95s showItem forwards;
+			}
+			&:nth-child(3) {
+				animation: 0.5s 6.1s showItem forwards;
+			}
+			&:nth-child(4) {
+				animation: 0.5s 6.35s showItem forwards;
+			}
+			&:nth-child(5) {
+				animation: 0.5s 6.5s showItem forwards;
+			}
+			&:nth-child(6) {
+				animation: 0.5s 6.65s showItem forwards;
+			}
+			&:nth-child(7) {
+				animation: 0.5s 6.8s showItem forwards;
+			}
+		}
+	}
+}

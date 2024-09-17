@@ -1,0 +1,47 @@
+// COLORS
+
+$white: #fff;
+$black: #000;
+$grey: #9c9c9c;
+
+$violet-light: #e58ff3;
+$violet: #a840b9;
+$violet-dark: #60166c;
+
+// FONTS
+$main-font: "kode_mono-regular-400";
+$medium-font: "kode_mono_medium-500";
+$semi-bold-font: "kode_mono_semi-bold-600";
+$bold-font: "kode_mono-bold-700";
+
+@font-face {
+	font-family: "kode_mono-regular-400";
+	src: url("../fonts/kodemono-regular-webfont.woff2") format("woff2"), url("../fonts/kodemono-regular-webfont.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "kode_mono_medium-500";
+	src: url("../fonts/kodemonomedium-regular-webfont.woff2") format("woff2"), url("../fonts/kodemonomedium-regular-webfont.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "kode_mono_semi-bold-600";
+	src: url("../fonts/kodemonosemibold-regular-webfont.woff2") format("woff2"), url("../fonts/kodemonosemibold-regular-webfont.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "kode_mono-bold-700";
+	src: url("../fonts/kodemono-bold-webfont.woff2") format("woff2"), url("../fonts/kodemono-bold-webfont.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}

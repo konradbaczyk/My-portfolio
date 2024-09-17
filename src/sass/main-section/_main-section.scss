@@ -1,0 +1,90 @@
+@use "../utils/resetCSS" as *;
+@use "../utils/variables" as *;
+@use "../utils/components" as *;
+@use "./home";
+@use "./projects";
+@use "./contact";
+
+// COMMON AREAS
+.main {
+	height: 80%;
+	// border: 1px solid $grey;
+	border-top: none;
+}
+
+.page {
+	height: 100%;
+	padding: 1rem 0 3rem 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	display: none;
+
+	&:nth-child(2) {
+		justify-content: flex-start;
+		padding-bottom: 0;
+	}
+
+	&__subtitle,
+	&__main-title {
+		margin-left: 0.5rem;
+		font-weight: 400;
+	}
+
+	&__subtitle {
+		font-size: 2rem;
+	}
+
+	&__main-title {
+		position: relative;
+		width: fit-content;
+		margin-bottom: 2rem;
+		font-size: 4.2rem;
+		line-height: 120%;
+		display: flex;
+		flex-wrap: wrap;
+		text-transform: uppercase;
+	}
+}
+
+// STATES
+.active-page {
+	display: flex;
+}
+
+// MEDIA QUERIES
+@media (min-width: 576px) {
+	.page {
+		&__subtitle {
+			font-size: 2.4rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.main {
+		height: 85%;
+	}
+
+	.page {
+		padding: 2rem 0 3rem 2rem;
+
+		&__main-title {
+			font-size: 5rem;
+		}
+	}
+}
+
+@media (min-width: 1400px) {
+	.page {
+		padding: 5rem 0 6rem 5rem;
+
+		&__subtitle {
+			font-size: 2.6rem;
+		}
+
+		&__main-title {
+			font-size: 6rem;
+		}
+	}
+}

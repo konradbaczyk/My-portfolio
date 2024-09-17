@@ -1,0 +1,17 @@
+@use "./utils/resetCSS" as *;
+@use "./utils/variables" as *;
+@use "./utils/components" as *;
+@use "./background/background";
+@use "./header/header";
+@use "./main-section/main-section";
+
+body {
+	padding: 2rem;
+	padding-bottom: 0;
+	display: flex;
+	flex-direction: column;
+	color: $white;
+	font-family: $main-font;
+	background-color: $black;
+	overflow: hidden;
+}

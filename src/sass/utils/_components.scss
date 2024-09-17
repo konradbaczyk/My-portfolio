@@ -1,0 +1,6 @@
+@use "./resetCSS" as *;
+@use "./variables" as *;
+
+.text-grey {
+	color: $grey;
+}

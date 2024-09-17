@@ -1,0 +1,91 @@
+@use "../utils/resetCSS" as *;
+@use "../utils/variables" as *;
+@use "../utils/components" as *;
+
+.contact-page {
+
+	&__main-title,
+	&__subtitle,
+	&__link-item {
+		opacity: 0;
+		rotate: -15deg;
+		transform-origin: left;
+	}
+
+	&__main-title {
+		transition: color 0.3s;
+		animation: 0.5s 0.4s showItem forwards;
+	}
+
+	&__subtitle {
+		animation: 0.5s 0.2s showItem forwards;
+	}
+
+	&__links {
+		display: flex;
+		gap: 2rem;
+	}
+
+	&__link-item {
+		&:nth-child(1) {
+			animation: 0.5s 0.7s showItem forwards;
+		}
+		&:nth-child(2) {
+			animation: 0.5s 0.9s showItem forwards;
+		}
+		&:nth-child(3) {
+			animation: 0.5s 1.1s showItem forwards;
+		}
+	}
+
+	&__link {
+		height: fit-content;
+		display: block;
+		text-align: center;
+		transition: color 0.3s;
+	}
+}
+
+// MEDIA QUERIES
+@media (min-width: 576px) {
+	.contact-page {
+		&__main-title {
+			&:hover,
+			&:focus {
+				color: $violet;
+			}
+
+			&:focus-visible {
+				outline: 1px solid $violet;
+			}
+		}
+
+		&__links {
+			margin-left: 0.5rem;
+		}
+
+		&__link {
+			display: flex;
+			align-items: end;
+			gap: 1rem;
+			font-size: 1.2rem;
+
+			&:hover,
+			&:focus {
+				color: $violet;
+			}
+
+			&:focus-visible {
+				outline: 1px solid $violet;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.contact-page {
+		&__links {
+			gap: 3rem;
+		}
+	}
+}
