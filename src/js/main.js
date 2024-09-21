@@ -1,5 +1,7 @@
 const navBtns = document.querySelectorAll(".navigation__button");
 const pages = document.querySelectorAll(".page");
+const homeTitle = document.querySelector(".home-page__main-title");
+const homeSubtitle = document.querySelector(".home-page__subtitle");
 
 const btnsArr = [...navBtns];
 const pagesArr = [...pages];
@@ -21,6 +23,13 @@ const changeActiveButton = (e) => {
 
 	btnClicked.classList.add("navigation__button--active");
 	otherBtns.forEach((btn) => btn.classList.remove("navigation__button--active"));
+
+	changeHomeAnimations();
+};
+
+const changeHomeAnimations = () => {
+	homeTitle.classList.add("main-title-second-animation");
+	homeSubtitle.classList.add("subtitle-second-animation");
 };
 
 navBtns.forEach((btn) => btn.addEventListener("click", changeActivePage));
