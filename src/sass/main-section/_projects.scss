@@ -29,6 +29,10 @@
 	&:nth-child(4) {
 		animation: 0.3s 0.8s showItem forwards;
 	}
+	&:nth-child(5) {
+		opacity: 1;
+		rotate: 0deg;
+	}
 
 	&__img-box {
 		width: 12rem;
@@ -69,6 +73,10 @@
 
 		&--project4 {
 			background-image: url("../img/project_landing_page.jpg");
+		}
+
+		&--project5 {
+			background-image: url("../img/project_gorski_zakatek.jpg");
 		}
 	}
 
